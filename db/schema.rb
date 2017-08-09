@@ -11,7 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170809035529) do
+ActiveRecord::Schema.define(version: 20170809061701) do
+
+  create_table "cards", force: :cascade do |t|
+    t.text     "commentFront"
+    t.text     "commentBack"
+    t.boolean  "isFront"
+    t.string   "color"
+    t.integer  "x"
+    t.integer  "y"
+    t.integer  "width"
+    t.integer  "height"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "groups", force: :cascade do |t|
+    t.string   "name"
+    t.text     "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "provider",               default: "email", null: false
