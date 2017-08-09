@@ -61,4 +61,5 @@ end
 gem 'devise'
 gem 'devise_token_auth'
 gem 'grape'
+gem 'grape-jbuilder'
 gem 'omniauth', '>= 1.0.0'
