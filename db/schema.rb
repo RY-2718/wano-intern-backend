@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170809061701) do
+ActiveRecord::Schema.define(version: 20170809091811) do
 
   create_table "cards", force: :cascade do |t|
     t.text     "commentFront"
@@ -24,7 +24,12 @@ ActiveRecord::Schema.define(version: 20170809061701) do
     t.integer  "height"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "group_id"
+    t.integer  "user_id"
   end
+
+  add_index "cards", ["group_id"], name: "index_cards_on_group_id"
+  add_index "cards", ["user_id"], name: "index_cards_on_user_id"
 
   create_table "groups", force: :cascade do |t|
     t.string   "name"
@@ -32,6 +37,16 @@ ActiveRecord::Schema.define(version: 20170809061701) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "user_groups", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "user_groups", ["group_id"], name: "index_user_groups_on_group_id"
+  add_index "user_groups", ["user_id"], name: "index_user_groups_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "provider",               default: "email", null: false
