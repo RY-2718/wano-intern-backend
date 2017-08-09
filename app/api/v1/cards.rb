@@ -3,7 +3,7 @@ module V1
 
       helpers do
          def card_params
-           ActionController::Parameters.new(params).permit(:commentFront, :commentBack, :isFront, :color, :x, :y, :width, :height, :created_at, :updated_at, :group_id)
+           ActionController::Parameters.new(params).permit(:commentFront, :commentBack, :isFront, :color, :x, :y, :width, :height, :group_id)
          end
       end
      
@@ -54,6 +54,10 @@ module V1
       desc 'POST /api/v1/cards post a card'
       post 'cards' do
       params do
+         requires :x, type:Integer
+         requires :y, type:Integer
+         requires :width, type:Integer
+         requires :height, type:Integer
          optional :commentFront, type: String
       end
          authenticate_user!
