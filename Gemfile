@@ -59,3 +59,6 @@ group :test do
 end
 
 gem 'devise'
+gem 'devise_token_auth'
+gem 'grape'
+gem 'omniauth', '>= 1.0.0'
