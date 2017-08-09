@@ -34,5 +34,6 @@ module V1
 			{message: 'test'}
 		end
 		# サンプルなので、単純に root.rb に記述
+    mount V1::Groups
 	end
 end
