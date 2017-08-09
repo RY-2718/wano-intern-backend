@@ -35,5 +35,6 @@ module V1
 		end
 		# サンプルなので、単純に root.rb に記述
     mount V1::Groups
+    mount V1::Cards
 	end
 end
