@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
           #:confirmable, 
           :omniauthable
   include DeviseTokenAuth::Concerns::User
-  has_many :cards, through: :user_groups
-  has_many :groups
+  has_many :cards
+  has_many :user_groups
+  has_many :groups ,through: :user_groups
 end
