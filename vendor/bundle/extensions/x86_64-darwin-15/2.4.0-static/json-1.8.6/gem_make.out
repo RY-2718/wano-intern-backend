@@ -1,0 +1,13 @@
+current directory: /Users/Ryo/workspace/Ruby/wano-intern/vendor/bundle/gems/json-1.8.6/ext/json
+/Users/Ryo/.rbenv/versions/2.4.0/bin/ruby -r ./siteconf20170809-49338-9quna9.rb extconf.rb
+creating Makefile
+
+current directory: /Users/Ryo/workspace/Ruby/wano-intern/vendor/bundle/gems/json-1.8.6/ext/json
+make "DESTDIR=" clean
+
+current directory: /Users/Ryo/workspace/Ruby/wano-intern/vendor/bundle/gems/json-1.8.6/ext/json
+make "DESTDIR="
+make: Nothing to be done for `all'.
+
+current directory: /Users/Ryo/workspace/Ruby/wano-intern/vendor/bundle/gems/json-1.8.6/ext/json
+make "DESTDIR=" install
