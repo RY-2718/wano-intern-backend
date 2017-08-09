@@ -20,7 +20,11 @@ module V1
     post 'groups' do
       authenticate_user!
       group = @user.groups.build(group_params)
-      @user.save
+      if @user.save then
+        { message: "success!" }
+      else
+        { message: "failed" }
+      end
     end
 
     desc 'GET /api/v1/groups/:id idで指定されたグループの情報を取得（不要？）'
