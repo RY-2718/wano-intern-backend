@@ -25,10 +25,9 @@ module V1
       end
    
       desc 'PUT /api/v1/cards/:id update cards'
-      put 'cards/:id' do
       params do
-         optional :commentFront, type: Text
-         optional :commentBack, type: Text
+         optional :commentFront, type: String
+         optional :commentBack, type: String
          optional :color, type: String
          optional :x, type: Integer
          optional :y, type: Integer
@@ -36,6 +35,7 @@ module V1
          optional :height, type: Integer
          optional :isFront, type: Boolean
       end
+      put 'cards/:id' do
          authenticate_user!
          card = Card.find(params[:id])
          if @user.cards.include?(card) then
@@ -59,17 +59,17 @@ module V1
       end
  
       desc 'POST /api/v1/cards post a card'
-      post 'cards' do
       params do
-         optional :commentFront, type: Text
-         optional :commentBack, type: Text
-         optional :color, type: String
          requires :x, type: Integer
          requires :y, type: Integer
          requires :width, type: Integer
          requires :height, type: Integer
          requires :isFront, type: Boolean
+         optional :commentFront, type: String
+         optional :commentBack, type: String
+         optional :color, type: String
       end
+      post 'cards' do
          authenticate_user!
          card = @user.cards.build(card_params)
          @user.save
