@@ -18,12 +18,12 @@
 | /auth/sign\_out | DELETE | サインアウト．必須ヘッダ: `uid`，`access_token`，`client` | |
 | /auth/password | POST | パスワード変更のためのリンクをメールで送信．必須ヘッダ: `uid`，`access_token`，`client` | してくれるそうなんですがどうやってメール送ってるんだ……といった感じなので使えないかもです |
 | /groups | GET | ユーザが所属しているグループ一覧を取得．必須ヘッダ: `uid`，`access_token`，`client` | |
-| /groups | POST | グループを新規作成．必須ヘッダ: `uid`，`access_token`，`client` 必須パラメータ: `name` オプションパラメータ: `comment` | ユーザは作成したグループに自動的に含まれます．|
+| /groups | POST | グループを新規作成．必須ヘッダ: `uid`，`access_token`，`client` 必須パラメータ: `name` オプションパラメータ: `comment` | ユーザは作成したグループに自動的に含まれます |
 | /groups/:id | GET | `id`で指定されるグループの情報を取得．必須ヘッダ: `uid`，`access_token`，`client` | 正直 `GET /groups` の下位互換です．グループに所属しているユーザでないと取得できないようになっています |
-| /groups/:id | PUT | `id`で指定されるグループの情報を編集．必須ヘッダ: `uid`，`access_token`，`client` オプションパラメータ: `name`，`comment` | そのグループに所属しているユーザでないと編集できないようになってます |
-| /groups/:id | DELETE | `id`で指定されるグループを削除．必須ヘッダ: `uid`，`access_token`，`client` | そのグループに所属しているユーザでないと削除できないようになってます |
+| /groups/:id | PUT | `id`で指定されるグループの情報を編集．必須ヘッダ: `uid`，`access_token`，`client` オプションパラメータ: `name`，`comment` | そのグループに所属しているユーザでないと編集できないようになっています |
+| /groups/:id | DELETE | `id`で指定されるグループを削除．必須ヘッダ: `uid`，`access_token`，`client` | そのグループに所属しているユーザでないと削除できないようになっています |
 | /groups/:id/cards | GET | `id`で指定されるグループに含まれるカードの一覧を取得．必須ヘッダ: `uid`，`access_token`，`client` | そのグループに所属しているユーザでないと取得できないようになっています |
-| /groups/:id/users | GET | `id`で指定されるグループに含まれるユーザの一覧を取得．必須ヘッダ: `uid`，`access_token`，`client` | そのグループに所属しているユーザでないと取得できないようになっています． |
+| /groups/:id/users | GET | `id`で指定されるグループに含まれるユーザの一覧を取得．必須ヘッダ: `uid`，`access_token`，`client` | そのグループに所属しているユーザでないと取得できないようになっています |
 | /groups/:id/users | POST | `id`で指定されるグループに参加．必須ヘッダ: `uid`，`access_token`，`client` | 現状idを取得する手段がない（と思う）ので使い道がなさそうな気がする |
 | /groups/:id/users | DELETE | `id`で指定されるグループから抜ける．必須ヘッダ: `uid`，`access_token`，`client` | |
 | /groups/:id/users | PUT | `id`で指定されるグループに`user_id`で指定されるユーザを追加．必須ヘッダ: `uid`，`access_token`，`client` 必須パラメータ: `user_id` | `user_id` をどう取得するかみたいな問題がある |
