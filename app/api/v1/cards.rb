@@ -27,7 +27,14 @@ module V1
       desc 'PUT /api/v1/cards/:id update cards'
       put 'cards/:id' do
       params do
-         optional :commentFront, type: String
+         optional :commentFront, type: Text
+         optional :commentBack, type: Text
+         optional :color, type: String
+         optional :x, type: Integer
+         optional :y, type: Integer
+         optional :width, type: Integer
+         optional :height, type: Integer
+         optional :isFront, type: Boolean
       end
          authenticate_user!
          card = Card.find(params[:id])
@@ -54,21 +61,18 @@ module V1
       desc 'POST /api/v1/cards post a card'
       post 'cards' do
       params do
-         optional :commentFront, type: String
+         optional :commentFront, type: Text
+         optional :commentBack, type: Text
+         optional :color, type: String
+         requires :x, type: Integer
+         requires :y, type: Integer
+         requires :width, type: Integer
+         requires :height, type: Integer
+         requires :isFront, type: Boolean
       end
          authenticate_user!
          card = @user.cards.build(card_params)
          @user.save
       end		
-
-     # desc 'PATCH /api/v1/cards/{:id}'
-     # patch 'cards' do
-     #     authenticate_user!			
-     # end
-
-     # desc 'DELETE /api/v1/cards/{:id}'
-     # delete 'cards' do
-     #     authenticate_user!			
-     # end
    end
 end
