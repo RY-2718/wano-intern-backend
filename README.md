@@ -10,7 +10,7 @@
 
 ### API一覧
 | path | method | 説明 | 備考 |
-| :-- | :-- | :-- |
+| :-- | :-- | :-- | :-- |
 | /auth | POST | 新規登録．必須パラメータ: `email`，`password`，`password_confirmation` オプションパラメータ: `image` | |
 | /auth | DELETE | ユーザの削除．必須ヘッダ: `uid`，`access_token`，`client` | |
 | /auth | PUT | ユーザ情報の更新．必須ヘッダ: `uid`，`access_token`，`client` オプションパラメータ：`password`，`password_confirmation`，`image` | |
