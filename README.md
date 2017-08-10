@@ -1,7 +1,7 @@
 # Wano intern backend
 ## API 仕様
 `http://[hostname]/api/v1/[path]` って感じで叩いてください．
-- e.g., `http:/localhost/:3000/api/v1/auth`
+- e.g., `http://localhost:3000/api/v1/auth`
     - このURLにPOSTすると新規登録できます
 
 ### 用語
