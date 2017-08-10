@@ -68,10 +68,14 @@ module V1
          optional :commentFront, type: String
          optional :commentBack, type: String
          optional :color, type: String
+         requires :group_id, type: Integer
       end
       post 'cards' do
          authenticate_user!
          card = @user.cards.build(card_params)
+         group = Group.find(:group_id)
+         group.cards << card
+         group.save
          @user.save
       end		
    end
