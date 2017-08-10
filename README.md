@@ -27,3 +27,8 @@
 | /groups/:id/users | POST | `id`で指定されるグループに参加．必須ヘッダ: `uid`，`access_token`，`client` | 現状idを取得する手段がない（と思う）ので使い道がなさそうな気がする |
 | /groups/:id/users | DELETE | `id`で指定されるグループから抜ける．必須ヘッダ: `uid`，`access_token`，`client` | |
 | /groups/:id/users | PUT | `id`で指定されるグループに`user_id`で指定されるユーザを追加．必須ヘッダ: `uid`，`access_token`，`client` 必須パラメータ: `user_id` | `user_id` をどう取得するかみたいな問題がある |
+| /card | GET | ユーザの全てのカード取得．必須ヘッダ: `uid`，`access_token`，`client` | |
+| /card/id | GET | id のカードを取得．必須ヘッダ: `uid`，`access_token`，`client` | |
+| /card | POST | カードの投稿．必須ヘッダ: `uid`，`access_token`，`client`. 必須パラメータ `x` `y` `width` `height` `isFront` オプションパラメータ: `commentFront` `commentBack` `color` | |
+| /card/id | PUT | id のカードを更新．必須ヘッダ: `uid`，`access_token`，`client`. オプションパラメータ: `commentFront` `commentBack` `color` `x` `y` `width` `height` `isFront` | |
+| /card | DELETE | id のカードを消去．必須ヘッダ: `uid`，`access_token`，`client`  | |
